@@ -19,31 +19,31 @@
 
         alert("Bienvenido al sorteo de un auto, para participar debes ser mayor de 18 años. Una vez terminado el ingreso de participantes cerrar el programa ingresando 0");
         do {
-            nombre = prompt("Ingrese nombre");
+            nombre = prompt("Ingrese nombre :");
         } while (nombre == "");
 
         while (nombre != 0) {
 
             do {
-                apellido = prompt("Ingrese apellido");
+                apellido = prompt("Ingrese apellido :");
             } while (apellido == "");
 
             do {
-                edad = Number(prompt("Ingrese edad"));
+                edad = Number(prompt("Ingrese edad :"));
             } while(edad == "")
 
             if(edad>=18) {
-                alert("Perfecto! Ya esta participando");
+                alert("Perfecto! Ya esta participando.");
                 cantParticipantes++;
             } else {
-                alert("Lo sentimos, " + nombre +" no tenes la edad suficiente");
+                alert("Lo sentimos " + nombre +" no tenes la edad suficiente.");
             }
 
             do {
-                nombre = prompt("Ingrese el nombre de otro participante");
+                nombre = prompt("Ingrese el nombre de otro participante. Ingrese 0 para terminar.");
             } while (nombre == "");
         }
-        alert("Se registraron " + cantParticipantes + " participantes para el sorteo");
+        alert("Se registraron " + cantParticipantes + " participantes para el sorteo.");
 
     </script>
 
