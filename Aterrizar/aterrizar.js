@@ -5,6 +5,7 @@ class PaqueteVuelos {
         this.hotel = hotel;
         this.precio = precio;
     }
+    
 
     mostrarPaquete() {
         console.log("Tenemos este paquete disponeble para tu destino.");
@@ -35,13 +36,14 @@ function preguntaSiReserva (paquete) {
         console.log("No hay problema. Podes reservarlos luego.");
     }
 }
+console.log("asd");
 
 
 const paquete1 = new PaqueteVuelos("Bariloche", 28, "Las nieves", 85000);
 const paquete2 = new PaqueteVuelos("Cordoba", 16, "El bosque", 31000);
 const paquete3 = new PaqueteVuelos("Montevideo", 22, "La rambla", 40000);
 const paquete4 = new PaqueteVuelos("Santiago de chile", 15, "La capital", 50000);
-const paquete5 = new PaqueteVuelos("Rio de Janeiro", 34, "La Caipirinha", 100000);
+const paquete5 = new PaqueteVuelos("Rio de Janeiro", 34, "La Caipirinha", 100000);S
 const paquete6 = new PaqueteVuelos("Mendoza", 25, "La Cordillera", 65000);
 
 let nombre = "";
