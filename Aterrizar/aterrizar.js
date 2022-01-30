@@ -87,36 +87,6 @@ if (destino == "0") {
             console.log("Aun no tenes vuelos a esta ciudad.");
         }
 
-        /* switch (destino) {
-            case "bariloche":
-                paquete1.mostrarPaquete();
-                preguntaSiReserva(paquete1);
-                break;
-            case "cordoba":
-                paquete2.mostrarPaquete();
-                preguntaSiReserva(paquete2);
-                break;
-            case "montevideo":
-                paquete3.mostrarPaquete();
-                preguntaSiReserva(paquete3);
-                break;
-            case "santiago de chile":
-                paquete4.mostrarPaquete();
-                preguntaSiReserva(paquete4);
-                break;
-            case "rio de janeiro":
-                paquete5.mostrarPaquete();
-                preguntaSiReserva(paquete5);
-                break;
-            case "mendoza":
-                paquete6.mostrarPaquete();
-                preguntaSiReserva(paquete6);
-                break;
-            default:
-                
-                break;
-        } */
-
         do {
             destino = prompt("Ingrese un destino. Ingrese 0 para terminar programa.");
         } while (destino == "")
