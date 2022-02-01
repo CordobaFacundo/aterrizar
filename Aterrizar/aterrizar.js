@@ -73,15 +73,15 @@ if (destino == "0") {
 } else {
     while (destino != "0") {
         destino = destino.toLowerCase();
-        const index = arrayPaquetes.findIndex((index) => index.destino == destino);
-        if(index>=0) {
-            if(index==6) {
+        const paquete = arrayPaquetes.find((paquete) => paquete.destino == destino);
+        if(paquete) {
+            if(paquete.destino==="disney") {
                 console.log("\nTenemos una oferta especial para Disney.\nSi compras 4 o mas pasajes tenes un 10% de descuento en el total a pagar.");
-                arrayPaquetes[index].mostrarPaquete();
-                preguntaSiReserva(arrayPaquetes[index]);
+                paquete.mostrarPaquete();
+                preguntaSiReserva(paquete);
             }else {
-                arrayPaquetes[index].mostrarPaquete();
-                preguntaSiReserva(arrayPaquetes[index]);
+                paquete.mostrarPaquete();
+                preguntaSiReserva(paquete);
             } 
         }else {
             console.log("Aun no tenes vuelos a esta ciudad.");
