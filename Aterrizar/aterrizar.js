@@ -13,14 +13,27 @@ function preguntaSiReserva (paquete) {
                 precioTotal -= precioTotal*0.1;
                 console.log("Descuento aplicado del 10%");
             }
-            console.log("Perfecto, reservaste " + cantPasajes + " pasajes");
-            console.log("Total a pagar: $" + precioTotal);
+            console.log("Perfecto, agregado a tu carrito.");
+            arrayCarrito.push(new Carrito(paquete.destino, cantPasajes, paquete.hotel, precioTotal));
         }else {
             console.log("Lo sentimos. No alcanzan los cupos.");
         }
     }else {
         console.log("No hay problema. Podes reservarlos luego.");
     }
+}
+
+function metodoDePago (carrito) {
+    let cantCuotas = 0;
+    let importeXcuota = 0;
+    alert("Podes pagar tus viajes en 3, 6, 9, 12 o 24 cuotas sin interes!!!");
+    do {
+        cantCuotas = Number(prompt("Ingrese la cantidad de cuotas :"));
+    }while (cantCuotas!=3 && cantCuotas !=6  && cantCuotas !=9  && cantCuotas !=12  && cantCuotas !=24)
+    console.log("\nElegiste pagar en " + cantCuotas + " cuotas");
+    importeXcuota = Math.round(carrito.impTotal/cantCuotas);
+    console.log("Monto a pagar por mes : $" + importeXcuota);
+
 }
 
 class PaqueteVuelos {
@@ -42,6 +55,23 @@ class PaqueteVuelos {
     }
 }
 
+class Carrito {
+    constructor(destino, cantPasajes, hotel, impTotal) {
+        this.destino = destino;
+        this.cantPasajes = cantPasajes;
+        this.hotel = hotel;
+        this.impTotal = impTotal;
+    }
+
+    mostrarCarrito() {
+        console.log("Destino : " + this.destino.toUpperCase());
+        console.log("Hotel : " + this.hotel);
+        console.log("Pasajes reservados : " + this.cantPasajes);
+        console.log("Importe total : $" + this.impTotal);
+    }
+}
+
+const arrayCarrito = [];
 const arrayPaquetes = [];
 arrayPaquetes.push(new PaqueteVuelos("bariloche", 38, "Las nieves", 85000));
 arrayPaquetes.push(new PaqueteVuelos("cordoba", 59, "El bosque", 35000));
@@ -77,12 +107,14 @@ if (destino == "0") {
         if(paquete) {
             if(paquete.destino==="disney") {
                 console.log("\nTenemos una oferta especial para Disney.\nSi compras 4 o mas pasajes tenes un 10% de descuento en el total a pagar.");
-                paquete.mostrarPaquete();
-                preguntaSiReserva(paquete);
-            }else {
-                paquete.mostrarPaquete();
-                preguntaSiReserva(paquete);
-            } 
+            }
+            paquete.mostrarPaquete();
+            preguntaSiReserva(paquete)
+            const carrito = arrayCarrito.find((carrito) => carrito.destino == destino);
+            if(carrito) {
+                carrito.mostrarCarrito();
+                metodoDePago(carrito);
+            }
         }else {
             console.log("Aun no tenes vuelos a esta ciudad.");
         }
