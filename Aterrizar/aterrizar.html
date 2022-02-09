@@ -23,16 +23,19 @@
   <nav class="navbar navbar-light" style="background-color: #ffffff;">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Destinos</a>
+        <a class="nav-link" href="aterrizar.html">Inicio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Paquetes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Ofertas</a>
+        <a class="nav-link" href="#">Destinos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Disney</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="carrito.html">Carrito</a>
       </li>
       <li>
         <input  onkeyup="if (event.keyCode === 13) {buscarDestino()}" id="ingresaDestino" type="text" placeholder="Ingresá una ciudad">
@@ -59,14 +62,16 @@
 
   <br><br>
 
-  <article>
+  <article id="paqueteSeVa">
     <div class="card-text">
       <section>
         <p id="muestraDestino"></p>
         <p id="muestraCupos"></p>
         <p id="muestraHotel"></p>
+        <p id="muestraCantDias"></p>
         <p id="muestraPrecio"></p>
-        <p id="botonReservar"></p>
+        <input id="inputCantReservas" type="number" placeholder="Cantidad de pasajes" style="visibility:hidden;" ></input>
+        <button id="botonReservar" onclick="preguntaSiReserva()" type="button" class="btn btn-primary btn-adminbutton" style="visibility:hidden;">Reservar</button>
       </section>
     </div>
   </article>
