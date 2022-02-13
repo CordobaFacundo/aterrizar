@@ -1,8 +1,9 @@
-class Carrito {
-    constructor(destino, hotel, cantDias, precio) {
-        this.destino = destino;
-        this.hotel = hotel;
-        this.cantDias = cantDias;
-        this.precio = precio;
-    }
+//Carrito
+let carritoStore = JSON.parse(localStorage.getItem('listaCarrito'));
+
+if (carritoStore){
+    arrayCarrito = [...carritoStore];
+    arrayCarrito.forEach(item => {
+        document.getElementById('muestraCarrito').innerHTML += '<br />' + item.destino;
+    });
 }
