@@ -7,17 +7,16 @@ function preguntaSiReserva() {
         for (let i = 0; i <= cantReservas - 1; i++) {
             arrayCarrito.push(new Carrito(paqueteSeleccionado.destino, paqueteSeleccionado.hotel, paqueteSeleccionado.cantDias, paqueteSeleccionado.precio));
             localStorage.setItem("listaCarrito", JSON.stringify(arrayCarrito));
+            let msjReservado = document.getElementById('msjReservado');
+            msjReservado.innerHTML = "Agregado al carrito!";
+            msjReservado.className = "mensajeMuestraPaquete";
+            setTimeout(() => {
+                document.getElementById('msjReservado').style.visibility = 'hidden';
+            }, 1000)
         }
-        console.log(arrayCarrito);
-        /* let paquetesReservados = JSON.parse(localStorage.getItem('listaCarrito'));
-        let x = document.getElementById('carrito');
-
-        for (let index=0; index<paquetesReservados.length; index++) {
-            x.innerHTML = '<div> paquetesReservados[i] </div>';
-        } */
     }else {
         let msjPaquete = document.getElementById('mostrarDestinoElegido');
-        msjPaquete.innerHTML = "Lo sentimos, por el momento no hay cupos suficientes."
+        msjPaquete.innerHTML = "Lo sentimos, por el momento no hay cupos suficientes.";
         msjPaquete.className = "mensajeErrorRojito";
     }
 }
@@ -50,9 +49,16 @@ function obtenerPaquetes() {
 }
 
 const arrayPaquetes = obtenerPaquetes();
-const arrayCarrito = [];
+let arrayCarrito = [];
 let paqueteSeleccionado = null;
 
+//Carrito
+let carritoStore = JSON.parse(localStorage.getItem('listaCarrito'));
+if (carritoStore){
+    arrayCarrito = [...carritoStore];
+}
+
+//Muesta destinos disponibles
 let destinosDisponiblesElement = document.getElementById('destinosDisponibles');
 for (const paquete of arrayPaquetes) {
     destinosDisponiblesElement.innerHTML += paquete.destino.toUpperCase();
@@ -96,7 +102,3 @@ function muestraPaquete() {
         document.getElementById('inputCantReservas').style.visibility = 'hidden';
     }
 }
-
-
-
-
