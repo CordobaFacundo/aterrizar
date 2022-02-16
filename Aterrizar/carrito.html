@@ -23,10 +23,7 @@
   <nav class="navbar navbar-light" style="background-color: #ffffff;">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="aterrizar.html">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Paquetes</a>
+        <a class="nav-link" href="index.html">Paquetes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Destinos</a>
@@ -39,18 +36,34 @@
       </li>
     </ul>
   </nav>
-  <br>
+  <br><br>
 
-  <h4 style="color: #6610f2;">Este es tu carrito!</h4>
+  <div class="container">
+    <h4 style="color: #6610f2;">Este es tu carrito!</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Destino</th>
+          <th scope="col">Hotel</th>
+          <th scope="col">Cantidad de Dias</th>
+          <th scope="col">Precio</th>
+        </tr>
+      </thead>
 
-  <article>
-    <section>
-      <div id="muestraCarrito">
-        
-      </div>
-    </section>
-  </article>
+      <tbody id="items"></tbody>
+
+      <tfoot id="footer">
+        <tr>
+          <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+        </tr>
+      </tfoot>
+  </div>
+
+
 
   <link rel="stylesheet" href="styles.css">
   <script src="carrito.js"></script>
 </body>
+
+</html>
