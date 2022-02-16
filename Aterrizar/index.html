@@ -16,17 +16,13 @@
   <h2 class="titulo">aterrizar.com </h2>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous">
-  </script>
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
   <nav class="navbar navbar-light" style="background-color: #ffffff;">
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" href="aterrizar.html">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Paquetes</a>
+        <a class="nav-link" href="index.html">Paquetes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Destinos</a>
@@ -38,13 +34,14 @@
         <a class="nav-link" href="carrito.html">Carrito</a>
       </li>
       <li>
-        <input  onkeyup="if (event.keyCode === 13) {buscarDestino()}" id="ingresaDestino" type="text" placeholder="Ingresá una ciudad">
+        <input onkeyup="if (event.keyCode === 13) {buscarDestino()}" id="ingresaDestino" type="text"
+          placeholder="Ingresá una ciudad">
         <button onclick="buscarDestino()" type="button" class="btn btn-primary btn-adminbutton">Buscar</button>
       </li>
     </ul>
   </nav>
   <br>
-  
+
   <div>
     <h4 id="msjDestinosActivos">Estos son nuestros destinos activos hasta el momento. Hecha un vistazo!</h4>
   </div>
@@ -62,28 +59,24 @@
 
   <br><br>
 
-  <article id="paqueteSeVa">
-    <div class="card-text">
-      <section>
-        <p id="muestraDestino"></p>
-        <p id="muestraCupos"></p>
-        <p id="muestraHotel"></p>
-        <p id="muestraCantDias"></p>
-        <p id="muestraPrecio"></p>
-        <input id="inputCantReservas" type="number" placeholder="Cantidad de pasajes" style="visibility:hidden;" ></input>
-        <button id="botonReservar" onclick="preguntaSiReserva()" type="button" class="btn btn-primary btn-adminbutton" style="visibility:hidden;">Reservar</button>
-        <br><br><span id="msjReservado"></span>
-      </section>
-    </div>
-  </article>
+  <!-- Aca van las cards de los paquetes -->
 
-  <br><br>  
+  <div id="contenedorCards"></div>
+ 
+
+  <div id="paqueteSeVa"></div>
+
+  <br><br>
+
+  <footer style="text-align: center;">Aterrizar esta precente en Argentina, Uruguay, Chile, Brasil, Colombia y Peru
+  </footer>
+  <footer style="text-align: center;">Creador: Facundo Cordoba</footer>
 
 
   <link rel="stylesheet" href="styles.css">
   <script src="Modelos/PaquetesVuelos.js"></script>
   <script src="Modelos/Carrito.js"></script>
-  <script src="aterrizar.js"></script>
+  <script src="main.js"></script>
 
 </body>
 
