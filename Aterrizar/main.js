@@ -49,14 +49,8 @@ function obtenerPaquetes() {
 }
 
 const arrayPaquetes = obtenerPaquetes();
-let arrayCarrito = [];
+let arrayCarrito = JSON.parse(localStorage.getItem('listaCarrito')) || [];
 let paqueteSeleccionado = null;
-
-//Carrito
-let carritoStore = JSON.parse(localStorage.getItem('listaCarrito'));
-if (carritoStore) {
-    arrayCarrito = [...carritoStore];
-}
 
 //Muesta destinos disponibles
 let destinosDisponiblesElement = document.getElementById('destinosDisponibles');
