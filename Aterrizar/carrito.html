@@ -53,9 +53,11 @@
 
       <tbody id="items"></tbody>
 
-      <tfoot id="footer">
+      <tfoot>
         <tr>
-          <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+          <th id="footer" scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+          <th><button id="btnVaciarCarrito" onclick="vaciaCarrito()" type="button" class="btn btn-primary btn-adminbutton"
+            style="visibility:hidden;">Vaciar Carrito</button></th>
         </tr>
       </tfoot>
   </div>
@@ -63,6 +65,7 @@
 
 
   <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="carrito.js"></script>
 </body>
 
