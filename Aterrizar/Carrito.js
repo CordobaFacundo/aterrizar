@@ -8,10 +8,9 @@ function quitarElementoCarrito(index) {
 }
 
 function mostrarCarrito () {
-    let carritoStore = JSON.parse(localStorage.getItem('listaCarrito'));
+    arrayCarrito = JSON.parse(localStorage.getItem('listaCarrito')) || [];
     document.getElementById('items').innerHTML ="";
-    if (carritoStore && carritoStore.length){
-        arrayCarrito = [...carritoStore];
+    if (arrayCarrito.length) {
         document.getElementById('footer').style.visibility = 'hidden';
         
         for(let i=0; i<arrayCarrito.length; i++) {
