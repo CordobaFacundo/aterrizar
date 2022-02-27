@@ -1,0 +1,12 @@
+{
+    "paquetes": [
+      {
+        "destino": "bariloche",
+        "cuposAvion": 38,
+        "hotel": "Las nieves", 
+        "cantDias": 7,
+        "precio": 85000,
+        "imagen": "https://lh3.googleusercontent.com/lhMjiGPt9r5TqteNEPR_orjQ07IyK9TH3T-nyMGnhjet1bpyQqkEpKaPZqeSMZ21"
+      }
+    ]
+}
