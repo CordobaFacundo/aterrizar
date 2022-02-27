@@ -7,6 +7,70 @@
         "cantDias": 7,
         "precio": 85000,
         "imagen": "https://lh3.googleusercontent.com/lhMjiGPt9r5TqteNEPR_orjQ07IyK9TH3T-nyMGnhjet1bpyQqkEpKaPZqeSMZ21"
+      },
+      {
+        "destino": "cordoba",
+        "cuposAvion": 59,
+        "hotel": "El bosque", 
+        "cantDias": 10,
+        "precio": 35000,
+        "imagen": "https://resizer.glanacion.com/resizer/S82MoxXDH8sUYAeCStMVcwpiwNc=/768x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/MT3FQFVTNVHNPDJVUQFUT5A5BM.jpg"
+      },
+      {
+        "destino": "montevideo",
+        "cuposAvion": 42,
+        "hotel": "La rambla", 
+        "cantDias": 7,
+        "precio": 40,
+        "imagen": "https://www.aldianews.com/sites/default/files/articles/montevideo_grande.jpg"
+      },
+      {
+        "destino": "santiago de chile",
+        "cuposAvion": 95,
+        "hotel": "La capital", 
+        "cantDias": 8,
+        "precio": 50000,
+        "imagen": "https://cnnespanol.cnn.com/wp-content/uploads/2019/05/190513150950-santiago-de-chile-city-view-full-169.jpg?quality=100&strip=info"
+      },
+      {
+        "destino": "rio de janeiro",
+        "cuposAvion": 44,
+        "hotel": "La caipirinha", 
+        "cantDias": 10,
+        "precio": 100000,
+        "imagen": "https://resizer.glanacion.com/resizer/Wsg9m5c1-qze5Dw52Sgp0iWF4FU=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/2FVD7UD2VJE2JI6IPCHRCKX7RA.jpg"
+      },
+      {
+        "destino": "mendoza",
+        "cuposAvion": 65,
+        "hotel": "La cordillera", 
+        "cantDias": 7,
+        "precio": 65000,
+        "imagen": "https://mendoza.travel/wp-content/uploads/ciudad.jpg"
+      },
+      {
+        "destino": "disney",
+        "cuposAvion": 90,
+        "hotel": "Mundo Disney", 
+        "cantDias": 10,
+        "precio": 60000,
+        "imagen": "https://es.web.img3.acsta.net/newsv7/21/10/01/11/21/3367277.jpg"
+      },
+      {
+        "destino": "lima",
+        "cuposAvion": 69,
+        "hotel": "Puebla", 
+        "cantDias": 7,
+        "precio": 60000,
+        "imagen": "http://revistaelconocedor.com/wp-content/uploads/2018/05/lima4.jpg"
+      },
+      {
+        "destino": "bogota",
+        "cuposAvion": 42,
+        "hotel": "City", 
+        "cantDias": 8,
+        "precio": 65000,
+        "imagen": "https://media.istockphoto.com/photos/bogota-cityscape-of-big-buildings-and-mountains-and-blue-sky-picture-id1182337590?k=20&m=1182337590&s=612x612&w=0&h=h4SZnF6gHCUvIYuy9CMr-qdlu9TebhA1z7JzVvF3m1Y="
       }
     ]
 }

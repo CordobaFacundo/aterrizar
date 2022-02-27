@@ -1,3 +1,27 @@
+let arrayPaquetes = [];
+let arrayCarrito = [];
+let paqueteSeleccionado = null;
+
+async function main() {
+     arrayPaquetes = await obtenerPaquetes();
+     arrayCarrito = JSON.parse(localStorage.getItem('listaCarrito')) || [];
+
+    //Muesta destinos disponibles
+    let destinosDisponiblesElement = document.getElementById('destinosDisponibles');
+    console.log("for")
+    for (const paquete of arrayPaquetes) {
+        destinosDisponiblesElement.innerHTML += paquete.destino.toUpperCase();
+
+        if (arrayPaquetes.indexOf(paquete) != arrayPaquetes.length - 1) {
+            destinosDisponiblesElement.innerHTML += " - ";
+        }
+    }
+
+    document.getElementById('paqueteSeVa').style.visibility = 'hidden';
+
+    mostrarCards();
+}
+
 function preguntaSiReserva() {
 
     let cantReservas = document.getElementById("inputCantReservas").value;
@@ -34,8 +58,12 @@ function metodoDePago(carrito) {
 
 }
 
-function obtenerPaquetes() {
-    return [
+async function obtenerPaquetes() {
+    return fetch('https://my-json-server.typicode.com/CordobaFacundo/aterrizar/paquetes')
+        .then(response => response.json())
+        .then(data => { return data; });
+
+    /* return [
         new PaqueteVuelos("bariloche", 38, "Las nieves", 7, 85000, "https://lh3.googleusercontent.com/lhMjiGPt9r5TqteNEPR_orjQ07IyK9TH3T-nyMGnhjet1bpyQqkEpKaPZqeSMZ21"),
         new PaqueteVuelos("cordoba", 59, "El bosque", 10, 35000, "https://resizer.glanacion.com/resizer/S82MoxXDH8sUYAeCStMVcwpiwNc=/768x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/MT3FQFVTNVHNPDJVUQFUT5A5BM.jpg"),
         new PaqueteVuelos("montevideo", 42, "La rambla", 7, 40000, "https://www.aldianews.com/sites/default/files/articles/montevideo_grande.jpg"),
@@ -45,24 +73,8 @@ function obtenerPaquetes() {
         new PaqueteVuelos("disney", 90, "Mundo Disney", 10, 60000, "https://es.web.img3.acsta.net/newsv7/21/10/01/11/21/3367277.jpg"),
         new PaqueteVuelos("lima", 68, "Puebla", 7, 60000, "http://revistaelconocedor.com/wp-content/uploads/2018/05/lima4.jpg"),
         new PaqueteVuelos("bogota", 82, "City", 8, 60000, "https://media.istockphoto.com/photos/bogota-cityscape-of-big-buildings-and-mountains-and-blue-sky-picture-id1182337590?k=20&m=1182337590&s=612x612&w=0&h=h4SZnF6gHCUvIYuy9CMr-qdlu9TebhA1z7JzVvF3m1Y=")
-    ];
+    ]; */
 }
-
-const arrayPaquetes = obtenerPaquetes();
-let arrayCarrito = JSON.parse(localStorage.getItem('listaCarrito')) || [];
-let paqueteSeleccionado = null;
-
-//Muesta destinos disponibles
-let destinosDisponiblesElement = document.getElementById('destinosDisponibles');
-for (const paquete of arrayPaquetes) {
-    destinosDisponiblesElement.innerHTML += paquete.destino.toUpperCase();
-
-    if (arrayPaquetes.indexOf(paquete) != arrayPaquetes.length - 1) {
-        destinosDisponiblesElement.innerHTML += " - ";
-    }
-}
-
-document.getElementById('paqueteSeVa').style.visibility = 'hidden';
 
 function buscarDestino() {
     let destino = document.getElementById('ingresaDestino').value;
@@ -135,9 +147,9 @@ function mostrarCards() {
     }
 }
 
-mostrarCards();
-
 function verDetalle(index) {
     paqueteSeleccionado = arrayPaquetes[index];
     muestraPaquete();
 }
+
+main();
