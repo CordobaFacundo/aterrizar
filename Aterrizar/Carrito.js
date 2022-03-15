@@ -10,6 +10,7 @@ function quitarElementoCarrito(index) {
 function mostrarCarrito () {
     arrayCarrito = JSON.parse(localStorage.getItem('listaCarrito')) || [];
     document.getElementById('items').innerHTML ="";
+    document.getElementById('msjDescuentoAplicado').style.visibility = "hidden";
     let tot = 0;
     if (arrayCarrito.length) {
         document.getElementById('footer').innerHTML = "";
@@ -22,13 +23,16 @@ function mostrarCarrito () {
             <td>${arrayCarrito[i].hotel}</td>
             <td>${arrayCarrito[i].cantDias} Dias</td>
             <td>$${arrayCarrito[i].precio}</td>
-            <td><button onclick="quitarElementoCarrito(${i})" type="button" class="btn btn-primary btn-adminbutton">-</button></td>
+            <td><button onclick="quitarElementoCarrito(${i})" type="button" class="btn btn-primary btn-adminbutton">Quitar</button></td>
             </tr>`
             document.getElementById('items').innerHTML += fila;
             tot += arrayCarrito[i].precio;
-            document.getElementById('footer').innerHTML = 'Total a pagar : $' + tot;
-
         }
+        if(arrayCarrito.length>=4) {
+            tot -= (tot*10)/100;
+            document.getElementById('msjDescuentoAplicado').style.visibility = "visible";
+        }
+        document.getElementById('footer').innerHTML = 'Total a pagar : $' + tot;
     } else {
         document.getElementById('footer').innerHTML = "Carrito vacío - comience a comprar!";
         document.getElementById('btnVaciarCarrito').style.visibility = "hidden";
