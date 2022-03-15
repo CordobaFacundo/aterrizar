@@ -57,6 +57,11 @@ function buscarDestino() {
     muestraPaquete();
 }
 
+function irDestinoDisney() {
+    paqueteSeleccionado = arrayPaquetes.find((paquete) => paquete.destino == 'disney');
+    muestraPaquete();
+}
+
 function muestraPaquete() {
     let msjPaquete = document.getElementById('mostrarDestinoElegido');
 
