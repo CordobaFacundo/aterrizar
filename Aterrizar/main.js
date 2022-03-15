@@ -8,7 +8,6 @@ async function main() {
 
     //Muesta destinos disponibles
     let destinosDisponiblesElement = document.getElementById('destinosDisponibles');
-    console.log("for")
     for (const paquete of arrayPaquetes) {
         destinosDisponiblesElement.innerHTML += paquete.destino.toUpperCase();
 
@@ -45,35 +44,10 @@ function preguntaSiReserva() {
     }
 }
 
-function metodoDePago(carrito) {
-    let cantCuotas = 0;
-    let importeXcuota = 0;
-    alert("Podes pagar tus viajes en 3, 6, 9, 12 o 24 cuotas sin interes!!!");
-    do {
-        cantCuotas = Number(prompt("Ingrese la cantidad de cuotas :"));
-    } while (cantCuotas != 3 && cantCuotas != 6 && cantCuotas != 9 && cantCuotas != 12 && cantCuotas != 24)
-    console.log("\nElegiste pagar en " + cantCuotas + " cuotas");
-    importeXcuota = Math.round(carrito.impTotal / cantCuotas);
-    console.log("Monto a pagar por mes : $" + importeXcuota);
-
-}
-
 async function obtenerPaquetes() {
     return fetch('https://my-json-server.typicode.com/CordobaFacundo/aterrizar/paquetes')
         .then(response => response.json())
         .then(data => { return data; });
-
-    /* return [
-        new PaqueteVuelos("bariloche", 38, "Las nieves", 7, 85000, "https://lh3.googleusercontent.com/lhMjiGPt9r5TqteNEPR_orjQ07IyK9TH3T-nyMGnhjet1bpyQqkEpKaPZqeSMZ21"),
-        new PaqueteVuelos("cordoba", 59, "El bosque", 10, 35000, "https://resizer.glanacion.com/resizer/S82MoxXDH8sUYAeCStMVcwpiwNc=/768x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/MT3FQFVTNVHNPDJVUQFUT5A5BM.jpg"),
-        new PaqueteVuelos("montevideo", 42, "La rambla", 7, 40000, "https://www.aldianews.com/sites/default/files/articles/montevideo_grande.jpg"),
-        new PaqueteVuelos("santiago de chile", 95, "La capital", 8, 50000, "https://cnnespanol.cnn.com/wp-content/uploads/2019/05/190513150950-santiago-de-chile-city-view-full-169.jpg?quality=100&strip=info"),
-        new PaqueteVuelos("rio de janeiro", 44, "La Caipirinha", 10, 100000, "https://resizer.glanacion.com/resizer/Wsg9m5c1-qze5Dw52Sgp0iWF4FU=/1920x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/2FVD7UD2VJE2JI6IPCHRCKX7RA.jpg"),
-        new PaqueteVuelos("mendoza", 65, "La Cordillera", 7, 65000, "https://mendoza.travel/wp-content/uploads/ciudad.jpg"),
-        new PaqueteVuelos("disney", 90, "Mundo Disney", 10, 60000, "https://es.web.img3.acsta.net/newsv7/21/10/01/11/21/3367277.jpg"),
-        new PaqueteVuelos("lima", 68, "Puebla", 7, 60000, "http://revistaelconocedor.com/wp-content/uploads/2018/05/lima4.jpg"),
-        new PaqueteVuelos("bogota", 82, "City", 8, 60000, "https://media.istockphoto.com/photos/bogota-cityscape-of-big-buildings-and-mountains-and-blue-sky-picture-id1182337590?k=20&m=1182337590&s=612x612&w=0&h=h4SZnF6gHCUvIYuy9CMr-qdlu9TebhA1z7JzVvF3m1Y=")
-    ]; */
 }
 
 function buscarDestino() {
